@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人主页</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 移动端胶囊导航 -->
+    <nav class="mobile-capsule-nav">
+      <div class="capsule-nav-content">
+        <a href="index.html" class="capsule-nav-button active">
+          <i class="fas fa-user"></i>
+        </a>
+        <a href="moments.html" class="capsule-nav-button">
+          <i class="fas fa-camera"></i>
+        </a>
+        <div class="capsule-divider"></div>
+        <button class="capsule-nav-button" id="theme-toggle-capsule">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="capsule-nav-button" id="back-to-top">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- 侧边导航栏 -->
+      <nav class="sidebar glass-card">
+        <div class="profile-brief">
+          <div class="avatar">
+            <img
+              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
+              alt="头像"
+            />
+          </div>
+          <h2>陈明阳</h2>
+          <p>前端开发工程师</p>
+        </div>
+        <ul class="nav-links">
+          <li class="active">
+            <a href="index.html"><i class="fas fa-user"></i> 个人资料</a>
+          </li>
+          <li>
+            <a href="moments.html"><i class="fas fa-camera"></i> 动态</a>
+          </li>
+        </ul>
+        <div class="site-info">
+          <p>
+            <i class="fas fa-calendar-alt"></i> 网站已运行:
+            <span id="running-days">0</span> 天
+          </p>
+          <p>
+            <i class="fas fa-eye"></i> 访客数: <span id="visitor-count">0</span>
+          </p>
+        </div>
+      </nav>
+
+      <!-- 主要内容区 -->
+      <main class="main-content">
+        <header class="page-header">
+          <h1>个人资料</h1>
+          <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </div>
+        </header>
+
+        <div class="profile-grid">
+          <!-- 基本信息 -->
+          <section class="basic-info glass-card">
+            <!-- Web端显示的内容 -->
+            <div class="web-profile">
+              <!-- 引言 -->
+              <div class="info-quote">
+                <i class="fas fa-quote-left"></i>
+                <p>
+                  致力于创造优秀的用户体验和高质量的前端产品，专注于现代Web技术的探索与实践。
+                </p>
+              </div>
+
+              <div class="info-divider"></div>
+
+              <!-- 联系信息 -->
+              <div class="contact-info">
+                <div class="contact-row">
+                  <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>深圳市南山区</span>
+                  </div>
+
+                  <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>chenmy@example.com</span>
+                  </div>
+                </div>
+
+                <!-- 社交链接 -->
+                <div class="social-links">
+                  <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="#" title="LinkedIn"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                  <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+                  <a href="#" title="下载简历"
+                    ><i class="fas fa-file-download"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 移动端显示的内容 -->
+            <div class="mobile-profile">
+              <div class="mobile-header">
+                <div class="mobile-avatar">
+                  <img
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
+                    alt="头像"
+                  />
+                </div>
+                <div class="mobile-basic">
+                  <h2>陈明阳</h2>
+                  <p class="mobile-position">前端开发工程师</p>
+                  <div class="mobile-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>深圳市南山区</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mobile-quote">
+                <i class="fas fa-quote-left"></i>
+                <p>
+                  致力于创造优秀的用户体验和高质量的前端产品，专注于现代Web技术的探索与实践。
+                </p>
+              </div>
+
+              <div class="mobile-contact">
+                <div class="mobile-email">
+                  <i class="fas fa-envelope"></i>
+                  <span>chenmy@example.com</span>
+                </div>
+
+                <div class="mobile-stats">
+                  <div class="stat-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span
+                      >网站已运行:
+                      <strong id="mobile-running-days">0</strong> 天</span
+                    >
+                  </div>
+                  <div class="stat-item">
+                    <i class="fas fa-eye"></i>
+                    <span
+                      >访客数:
+                      <strong id="mobile-visitor-count">0</strong></span
+                    >
+                  </div>
+                </div>
+
+                <div class="mobile-social">
+                  <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="#" title="LinkedIn"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                  <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+                  <a href="#" title="下载简历"
+                    ><i class="fas fa-file-download"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 工作经历 -->
+          <section class="timeline-card glass-card">
+            <h2>工作经历</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h3>
+                    腾讯科技有限公司 <span class="job-tag fulltime">全职</span>
+                  </h3>
+                  <span class="time">2021 - 至今</span>
+                  <p class="position">高级前端开发工程师</p>
+                  <p>
+                    负责公司核心产品的前端架构设计与开发，优化用户体验和页面性能，带领团队完成多个重要项目的交付。
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h3>
+                    阿里巴巴集团 <span class="job-tag fulltime">全职</span>
+                  </h3>
+                  <span class="time">2018 - 2021</span>
+                  <p class="position">前端开发工程师</p>
+                  <p>
+                    参与电商平台的前端开发，负责实现复杂交互功能，优化网站性能，提升用户转化率。
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h3>字节跳动 <span class="job-tag intern">实习</span></h3>
+                  <span class="time">2017 - 2018</span>
+                  <p class="position">前端开发实习生</p>
+                  <p>
+                    参与内部管理系统的开发，学习现代前端技术栈，积累实战经验。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 教育经历 -->
+          <section class="timeline-card glass-card">
+            <h2>教育经历</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h3>北京大学</h3>
+                  <span class="time">2015 - 2018</span>
+                  <p class="position">计算机科学与技术 | 硕士</p>
+                  <p>研究方向：人机交互与用户体验设计，获得优秀毕业生称号。</p>
+
+                  <div class="education-details">
+                    <div class="education-detail-item">
+                      <span class="education-detail-label">GPA</span>
+                      <span class="education-detail-value">3.9/4.0</span>
+                    </div>
+                    <div class="education-detail-item">
+                      <span class="education-detail-label">排名</span>
+                      <span class="education-detail-value">前5%</span>
+                    </div>
+                    <div class="education-detail-item">
+                      <span class="education-detail-label">主修课程</span>
+                      <div class="courses-list">
+                        <span class="course-tag">高级算法</span>
+                        <span class="course-tag">人机交互</span>
+                        <span class="course-tag">机器学习</span>
+                        <span class="course-tag">数据可视化</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="thesis-section">
+                    <div class="thesis-title">
+                      <i class="fas fa-book"></i> 毕业论文
+                    </div>
+                    <div class="thesis-content">
+                      <h4>《基于深度学习的用户界面自动生成研究》</h4>
+                      <p>
+                        本研究提出了一种基于深度学习的方法，通过分析大量优质UI设计，自动生成符合用户体验原则的界面布局和设计方案。该研究获得了校优秀硕士论文奖。
+                      </p>
+                      <div class="thesis-keywords">
+                        <span class="keyword-tag">深度学习</span>
+                        <span class="keyword-tag">用户界面</span>
+                        <span class="keyword-tag">自动生成</span>
+                        <span class="keyword-tag">人机交互</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h3>华南理工大学</h3>
+                  <span class="time">2011 - 2015</span>
+                  <p class="position">软件工程 | 本科</p>
+                  <p>
+                    主修课程包括数据结构、算法分析、软件工程、数据库系统等，GPA
+                    3.8/4.0。
+                  </p>
+
+                  <div class="education-details">
+                    <div class="education-detail-item">
+                      <span class="education-detail-label">GPA</span>
+                      <span class="education-detail-value">3.8/4.0</span>
+                    </div>
+                    <div class="education-detail-item">
+                      <span class="education-detail-label">排名</span>
+                      <span class="education-detail-value">前10%</span>
+                    </div>
+                    <div class="education-detail-item">
+                      <span class="education-detail-label">主修课程</span>
+                      <div class="courses-list">
+                        <span class="course-tag">数据结构</span>
+                        <span class="course-tag">算法分析</span>
+                        <span class="course-tag">软件工程</span>
+                        <span class="course-tag">数据库系统</span>
+                        <span class="course-tag">计算机网络</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="thesis-section">
+                    <div class="thesis-title">
+                      <i class="fas fa-book"></i> 毕业设计
+                    </div>
+                    <div class="thesis-content">
+                      <h4>《基于Web的校园社交平台设计与实现》</h4>
+                      <p>
+                        设计并实现了一个面向大学生的校园社交平台，包括信息分享、活动组织、资源交换等功能模块。该项目获得了优秀毕业设计奖。
+                      </p>
+                      <div class="thesis-keywords">
+                        <span class="keyword-tag">Web开发</span>
+                        <span class="keyword-tag">社交平台</span>
+                        <span class="keyword-tag">前后端分离</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 校园经历 -->
+          <section class="campus-card glass-card">
+            <h2>校园经历</h2>
+            <div class="campus-experience">
+              <!-- 班干部经历 -->
+              <div class="campus-section">
+                <div class="campus-section-header">
+                  <i class="fas fa-users"></i>
+                  <h3>班干部经历</h3>
+                </div>
+                <div class="campus-items">
+                  <div class="campus-item">
+                    <div class="campus-item-header">
+                      <h4>研究生班长</h4>
+                      <span class="campus-time">2015 - 2018</span>
+                    </div>
+                    <p>
+                      负责班级日常事务管理、组织班级活动、协调师生关系，获评"优秀班干部"称号两次。
+                    </p>
+                  </div>
+                  <div class="campus-item">
+                    <div class="campus-item-header">
+                      <h4>本科生学习委员</h4>
+                      <span class="campus-time">2012 - 2015</span>
+                    </div>
+                    <p>
+                      负责组织班级学习活动、协助同学解决学习困难、组织考前复习，班级平均成绩提升15%。
+                    </p>
+                  </div>
+                  <div class="campus-item">
+                    <div class="campus-item-header">
+                      <h4>学生会技术部副部长</h4>
+                      <span class="campus-time">2013 - 2014</span>
+                    </div>
+                    <p>
+                      负责学校各类活动的技术支持，包括网站维护、设备管理等，成功支持了20余场校级活动。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 获奖经历 -->
+              <div class="campus-section">
+                <div class="campus-section-header">
+                  <i class="fas fa-trophy"></i>
+                  <h3>获奖经历</h3>
+                </div>
+                <div class="campus-items">
+                  <div class="campus-item">
+                    <div class="campus-item-header">
+                      <h4>校级优秀毕业生</h4>
+                      <span class="campus-time">2018</span>
+                    </div>
+                    <p>
+                      因学习成绩优异、科研能力突出、综合素质全面，被评为北京大学优秀毕业生。
+                    </p>
+                  </div>
+                  <div class="campus-item">
+                    <div class="campus-item-header">
+                      <h4>全国研究生创新大赛二等奖</h4>
+                      <span class="campus-time">2017</span>
+                    </div>
+                    <p>
+                      以《基于深度学习的用户界面自动生成系统》项目参赛，在全国500余支队伍中脱颖而出。
+                    </p>
+                  </div>
+                  <div class="campus-item">
+                    <div class="campus-item-header">
+                      <h4>一等学业奖学金</h4>
+                      <span class="campus-time">2016, 2017</span>
+                    </div>
+                    <p>
+                      连续两年获得北京大学研究生一等学业奖学金，奖励学术表现突出的学生。
+                    </p>
+                  </div>
+                  <div class="campus-item">
+                    <div class="campus-item-header">
+                      <h4>校三好学生</h4>
+                      <span class="campus-time">2013, 2014</span>
+                    </div>
+                    <p>本科期间两次获得华南理工大学"三好学生"荣誉称号。</p>
+                  </div>
+                  <div class="campus-item">
+                    <div class="campus-item-header">
+                      <h4>学院编程大赛一等奖</h4>
+                      <span class="campus-time">2014</span>
+                    </div>
+                    <p>
+                      在学院举办的编程大赛中获得一等奖，展示了扎实的编程功底和算法能力。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 社团活动 -->
+              <div class="campus-section">
+                <div class="campus-section-header">
+                  <i class="fas fa-puzzle-piece"></i>
+                  <h3>社团活动</h3>
+                </div>
+                <div class="campus-items">
+                  <div class="campus-item">
+                    <div class="campus-item-header">
+                      <h4>编程俱乐部会长</h4>
+                      <span class="campus-time">2014 - 2015</span>
+                    </div>
+                    <p>
+                      组织编程培训、技术分享会和编程竞赛，提升了俱乐部影响力，会员数量增长40%。
+                    </p>
+                  </div>
+                  <div class="campus-item">
+                    <div class="campus-item-header">
+                      <h4>志愿者协会成员</h4>
+                      <span class="campus-time">2012 - 2015</span>
+                    </div>
+                    <p>
+                      参与多次社区服务和公益活动，累计志愿服务时间超过200小时，获"优秀志愿者"称号。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 技能栈 -->
+          <section class="skills-card glass-card">
+            <h2>技术栈</h2>
+            <div class="skills-container">
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">HTML5/CSS3</span>
+                  <span class="skill-level-text">精通</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress html"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">JavaScript/TypeScript</span>
+                  <span class="skill-level-text">精通</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress js"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Vue.js</span>
+                  <span class="skill-level-text">熟练</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress vue"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">React</span>
+                  <span class="skill-level-text">熟练</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress react"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Node.js</span>
+                  <span class="skill-level-text">良好</span>
+                </div>
+                <div class="skill-bar">
+                  <div
+                    class="skill-progress"
+                    style="
+                      width: 65%;
+                      background: linear-gradient(90deg, #68a063, #3c873a);
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Webpack/Vite</span>
+                  <span class="skill-level-text">熟练</span>
+                </div>
+                <div class="skill-bar">
+                  <div
+                    class="skill-progress"
+                    style="
+                      width: 75%;
+                      background: linear-gradient(90deg, #8ed6fb, #1c78c0);
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 项目经历 -->
+          <section class="projects-card glass-card">
+            <h2>项目经历</h2>
+            <div class="projects-grid">
+              <div class="project-item">
+                <div class="project-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+                    alt="企业管理系统"
+                  />
+                </div>
+                <div class="project-content">
+                  <div class="project-tech">
+                    <span class="tech-tag">Vue.js</span>
+                    <span class="tech-tag">Element UI</span>
+                    <span class="tech-tag">Node.js</span>
+                  </div>
+                  <h3>企业资源管理系统</h3>
+                  <p>
+                    基于Vue.js开发的大型企业资源管理系统，实现了用户管理、权限控制、数据分析等功能，提升了企业运营效率。
+                  </p>
+                  <div class="project-links">
+                    <a href="#" class="project-link demo"
+                      ><i class="fas fa-eye"></i> 查看演示</a
+                    >
+                    <a href="#" class="project-link code"
+                      ><i class="fas fa-code"></i> 查看代码</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="project-item">
+                <div class="project-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="电商平台"
+                  />
+                </div>
+                <div class="project-content">
+                  <div class="project-tech">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Redux</span>
+                    <span class="tech-tag">Ant Design</span>
+                  </div>
+                  <h3>电商购物平台</h3>
+                  <p>
+                    基于React开发的电商平台，包含商品展示、购物车、订单管理等功能，采用响应式设计，适配多种设备。
+                  </p>
+                  <div class="project-links">
+                    <a href="#" class="project-link demo"
+                      ><i class="fas fa-eye"></i> 查看演示</a
+                    >
+                    <a href="#" class="project-link code"
+                      ><i class="fas fa-code"></i> 查看代码</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="project-item">
+                <div class="project-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="音乐播放器"
+                  />
+                </div>
+                <div class="project-content">
+                  <div class="project-tech">
+                    <span class="tech-tag">Vue.js</span>
+                    <span class="tech-tag">Vuex</span>
+                    <span class="tech-tag">Web Audio API</span>
+                  </div>
+                  <h3>在线音乐播放器</h3>
+                  <p>
+                    基于Vue.js开发的在线音乐播放器，支持歌曲搜索、播放列表管理、音频可视化等功能，提供流畅的用户体验。
+                  </p>
+                  <div class="project-links">
+                    <a href="#" class="project-link demo"
+                      ><i class="fas fa-eye"></i> 查看演示</a
+                    >
+                    <a href="#" class="project-link code"
+                      ><i class="fas fa-code"></i> 查看代码</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- 通用组件：弹窗 -->
+    <div class="modal" id="modal">
+      <div class="modal-content glass-card">
+        <span class="close-btn">&times;</span>
+        <h2 class="modal-title">弹窗标题</h2>
+        <div class="modal-body">
+          <p>弹窗内容将在这里显示...</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary">取消</button>
+          <button class="btn btn-primary">确定</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 通用组件：提示 -->
+    <div class="toast" id="toast">
+      <div class="toast-content">
+        <i class="fas fa-check-circle toast-icon"></i>
+        <div class="toast-message">操作成功！</div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

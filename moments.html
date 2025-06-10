@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人动态 - 个人主页</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="moments.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 移动端胶囊导航 -->
+    <nav class="mobile-capsule-nav">
+      <div class="capsule-nav-content">
+        <a href="index.html" class="capsule-nav-button">
+          <i class="fas fa-user"></i>
+        </a>
+        <a href="moments.html" class="capsule-nav-button active">
+          <i class="fas fa-camera"></i>
+        </a>
+        <div class="capsule-divider"></div>
+        <button class="capsule-nav-button" id="theme-toggle-capsule">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="capsule-nav-button" id="back-to-top">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- 侧边导航栏 -->
+      <nav class="sidebar glass-card">
+        <div class="profile-brief">
+          <div class="avatar">
+            <img
+              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
+              alt="头像"
+            />
+          </div>
+          <h2>陈明阳</h2>
+          <p>前端开发工程师</p>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html"><i class="fas fa-user"></i> 个人资料</a>
+          </li>
+          <li class="active">
+            <a href="moments.html"><i class="fas fa-camera"></i> 动态</a>
+          </li>
+        </ul>
+        <div class="site-info">
+          <p>
+            <i class="fas fa-calendar-alt"></i> 网站已运行:
+            <span id="running-days">0</span> 天
+          </p>
+          <p>
+            <i class="fas fa-eye"></i> 访客数: <span id="visitor-count">0</span>
+          </p>
+        </div>
+      </nav>
+
+      <!-- 主要内容区 -->
+      <main class="main-content">
+        <header class="page-header">
+          <h1>个人动态</h1>
+          <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </div>
+        </header>
+
+        <!-- 动态列表 -->
+        <div class="moments-container">
+          <!-- 动态项 1：九宫格 -->
+          <div class="moment-item glass-card">
+            <div class="moment-header">
+              <div class="moment-user">
+                <img
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
+                  alt="头像"
+                  class="moment-avatar"
+                />
+                <div>
+                  <h3>陈明阳</h3>
+                  <div class="moment-meta">
+                    <span
+                      ><i class="fas fa-map-marker-alt"></i> 北京市朝阳区</span
+                    >
+                    <span><i class="fas fa-clock"></i> 2023-06-15 14:30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="moment-content">
+              <p>周末去了颐和园游玩，风景真美，分享一些照片给大家！</p>
+              <div class="moment-images grid-9">
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1548957175-84f0f9af659e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+                    alt="颐和园照片1"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1577701122197-c9347761bf16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+                    alt="颐和园照片2"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1609772457544-3e9f55a1cb97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="颐和园照片3"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1599153816797-91e5f211904f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="颐和园照片4"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1600507455869-df4162f6555c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80"
+                    alt="颐和园照片5"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1602308951223-5f504695b1b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="颐和园照片6"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1578614029230-25713f2c104b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="颐和园照片7"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1599153816797-91e5f211904f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="颐和园照片8"
+                  />
+                </div>
+                <div class="image-container more-images">
+                  <img
+                    src="https://images.unsplash.com/photo-1602308951223-5f504695b1b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="颐和园照片9"
+                  />
+                  <div class="more-count">+3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 动态项 2：五宫格 -->
+          <div class="moment-item glass-card">
+            <div class="moment-header">
+              <div class="moment-user">
+                <img
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
+                  alt="头像"
+                  class="moment-avatar"
+                />
+                <div>
+                  <h3>陈明阳</h3>
+                  <div class="moment-meta">
+                    <span
+                      ><i class="fas fa-map-marker-alt"></i>
+                      上海市浦东新区</span
+                    >
+                    <span><i class="fas fa-clock"></i> 2023-06-10 18:45</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="moment-content">
+              <p>今天参加了一个技术分享会，收获满满！</p>
+              <div class="moment-images grid-5">
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="技术分享会照片1"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="技术分享会照片2"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="技术分享会照片3"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80"
+                    alt="技术分享会照片4"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1558403194-611308249627?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="技术分享会照片5"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 动态项 3：单图 -->
+          <div class="moment-item glass-card">
+            <div class="moment-header">
+              <div class="moment-user">
+                <img
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
+                  alt="头像"
+                  class="moment-avatar"
+                />
+                <div>
+                  <h3>陈明阳</h3>
+                  <div class="moment-meta">
+                    <span
+                      ><i class="fas fa-map-marker-alt"></i> 广州市天河区</span
+                    >
+                    <span><i class="fas fa-clock"></i> 2023-06-05 09:15</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="moment-content">
+              <p>新买的键盘到了，手感超棒！</p>
+              <div class="moment-images grid-1">
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1563191911-e65f8a94f0d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="机械键盘"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 动态项 4：八宫格 -->
+          <div class="moment-item glass-card">
+            <div class="moment-header">
+              <div class="moment-user">
+                <img
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
+                  alt="头像"
+                  class="moment-avatar"
+                />
+                <div>
+                  <h3>陈明阳</h3>
+                  <div class="moment-meta">
+                    <span
+                      ><i class="fas fa-map-marker-alt"></i> 深圳市南山区</span
+                    >
+                    <span><i class="fas fa-clock"></i> 2023-05-28 20:30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="moment-content">
+              <p>今天尝试了一家新开的咖啡店，环境不错！</p>
+              <div class="moment-images grid-8">
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80"
+                    alt="咖啡店照片1"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1178&q=80"
+                    alt="咖啡店照片2"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="咖啡店照片3"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="咖啡店照片4"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+                    alt="咖啡店照片5"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1498804103079-a6351b050096?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                    alt="咖啡店照片6"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80"
+                    alt="咖啡店照片7"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80"
+                    alt="咖啡店照片8"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 动态项 5：纯文字 -->
+          <div class="moment-item glass-card">
+            <div class="moment-header">
+              <div class="moment-user">
+                <img
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
+                  alt="头像"
+                  class="moment-avatar"
+                />
+                <div>
+                  <h3>陈明阳</h3>
+                  <div class="moment-meta">
+                    <span
+                      ><i class="fas fa-map-marker-alt"></i> 杭州市西湖区</span
+                    >
+                    <span><i class="fas fa-clock"></i> 2023-05-20 15:10</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="moment-content">
+              <p>
+                今天完成了一个重要项目的上线，团队合作真的很重要！感谢每一位成员的付出和努力，我们一起克服了很多困难，最终成功交付了高质量的产品。用户反馈也非常好，这是对我们最大的肯定！
+              </p>
+            </div>
+          </div>
+
+          <!-- 动态项 6：7张照片 -->
+          <div class="moment-item glass-card">
+            <div class="moment-header">
+              <div class="moment-user">
+                <img
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
+                  alt="头像"
+                  class="moment-avatar"
+                />
+                <div>
+                  <h3>陈明阳</h3>
+                  <div class="moment-meta">
+                    <span
+                      ><i class="fas fa-map-marker-alt"></i> 三亚市海棠区</span
+                    >
+                    <span><i class="fas fa-clock"></i> 2023-04-15 09:30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="moment-content">
+              <p>三亚旅行归来，阳光、沙滩、海浪，完美的假期！</p>
+              <div class="moment-images grid-7">
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                    alt="三亚照片1"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="三亚照片2"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1540202404-a2f29016b523?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1633&q=80"
+                    alt="三亚照片3"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1540202404-d0c7fe46a087?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1633&q=80"
+                    alt="三亚照片4"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1543731068-7e0f5beff43a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                    alt="三亚照片5"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1545579133-99bb5ab189bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="三亚照片6"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://images.unsplash.com/photo-1573790387438-4da905039392?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80"
+                    alt="三亚照片7"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 加载更多按钮 -->
+        <div class="load-more">
+          <button class="btn btn-primary">加载更多</button>
+        </div>
+      </main>
+    </div>
+
+    <!-- 通用组件：弹窗 -->
+    <div class="modal" id="modal">
+      <div class="modal-content glass-card">
+        <span class="close-btn">&times;</span>
+        <h2 class="modal-title">弹窗标题</h2>
+        <div class="modal-body">
+          <p>弹窗内容将在这里显示...</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary">取消</button>
+          <button class="btn btn-primary">确定</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 通用组件：提示 -->
+    <div class="toast" id="toast">
+      <div class="toast-content">
+        <i class="fas fa-check-circle toast-icon"></i>
+        <div class="toast-message">操作成功！</div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
