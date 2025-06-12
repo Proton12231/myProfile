@@ -1,17 +1,48 @@
-# 个人主页网站设计稿
+# 个人主页网站项目
 
-这是一个现代简约风格的个人主页网站，包含个人资料页面和动态页面
+这是一个现代风格的个人主页网站，包含个人资料展示、动态分享以及后台管理系统。
 
-## 项目结构
+## 项目架构
+
+项目分为三个主要部分：
 
 ```
-├── index.html          # 个人资料页面
-├── moments.html        # 动态页面
-├── style.css           # 个人资料页样式文件
-├── moments.css         # 动态页面样式文件
-├── script.js           # JavaScript脚本
-└── README.md           # 项目说明文档
+├── client/            # 前端展示页面 (React + TypeScript)
+├── admin/             # 后台管理系统 (Vue3 + Element UI + JavaScript)
+├── server/            # 后端服务 (Node.js + Express + MongoDB)
+├── index.html         # 个人资料页面设计稿
+├── moments.html       # 动态页面设计稿
+├── style.css          # 个人资料页样式文件
+├── moments.css        # 动态页样式文件
+├── script.js          # JavaScript脚本
+└── README.md          # 项目说明文档
 ```
+
+## 技术栈
+
+### 客户端 (client)
+
+- React 19
+- TypeScript
+- React Router v7
+- Styled Components
+- i18next (国际化)
+- Axios (HTTP 请求)
+- Font Awesome (图标)
+
+### 管理后台 (admin)
+
+- Vue 3
+- JavaScript
+- Element UI
+- Vue Router
+
+### 服务端 (server)
+
+- Node.js
+- Express
+- MongoDB
+- RESTful API
 
 ## 功能特点
 
@@ -19,10 +50,11 @@
 
 - 展示个人基本信息
 - 教育经历（时间线形式）
-- 工作经历（时间线形式）
+- 工作经历（时间线形式，区分全职/实习）
 - 技术栈展示（带进度条）
 - 项目经历
 - 网站运行统计（运行天数、访客数）
+- 教育经历详情（GPA、排名、主修课程、所获奖项）
 
 ### 动态页
 
@@ -31,35 +63,47 @@
 - 显示发布地点和时间
 - 支持点赞、评论、分享功能
 
-### 通用组件
+### 管理后台
 
-- 毛玻璃效果卡片
-- 弹窗组件
-- 提示框组件
-- 确认对话框
-- 暗黑模式切换
+- 内容管理（个人信息、教育经历、工作经历、项目经历）
+- 动态管理（发布、编辑、删除）
+- 数据统计与分析
+- 用户管理与权限控制
 
 ## 设计特点
 
 - 响应式设计，适配移动端和桌面端
-- 现代简约风格
-- 毛玻璃效果和渐变色元素
+- 现代 Bento Box 风格布局
+- 毛玻璃效果和圆角设计
 - 平滑过渡动画
 - 暗黑模式支持
+- 移动端优化（顶部固定导航栏和底部悬浮导航栏）
 
-## 使用方法
+## 开发与部署
 
-1. 克隆或下载项目文件
-2. 在浏览器中打开 `index.html` 查看个人资料页
-3. 点击导航栏中的"动态"进入动态页面
-4. 访问 `admin.html` 进入后台管理系统
+### 客户端开发
 
-## 技术栈
+```bash
+cd client
+npm install
+npm run dev
+```
 
-- HTML5
-- CSS3
-- JavaScript (原生)
-- Font Awesome 图标库
+### 管理后台开发
+
+```bash
+cd admin
+npm install
+npm run dev
+```
+
+### 服务端开发
+
+```bash
+cd server
+npm install
+npm run dev
+```
 
 ## 浏览器兼容性
 
@@ -70,5 +114,6 @@
 
 ## 注意事项
 
-- 这是一个前端设计稿，实际应用需要配合后端服务使用
-- 毛玻璃效果在某些旧版浏览器可能不支持
+- 确保 MongoDB 服务已启动
+- 开发环境需配置相应的环境变量
+- 部署前请进行完整的测试
