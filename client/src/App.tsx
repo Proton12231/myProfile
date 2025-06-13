@@ -18,6 +18,23 @@ const AppContainer = styled.div`
   padding: ${(props) => props.theme.spacingMd};
   max-width: 1440px;
   margin: 0 auto;
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+    gap: ${(props) => props.theme.spacingLg};
+    padding: ${(props) => props.theme.spacingLg};
+  }
+
+  /* 移动端时， 侧边栏固定， 内容区域自适应 */
+  @media (max-width: 991px) {
+    padding-top: ${(props) => props.theme.spacingMd};
+    padding-bottom: ${(props) => `calc(${props.theme.spacingLg} *2 + 56px )`};
+  }
+
+  @media (max-width: 576px) {
+    padding-left: ${(props) => props.theme.spacingSm};
+    padding-right: ${(props) => props.theme.spacingSm};
+  }
 `;
 
 /**

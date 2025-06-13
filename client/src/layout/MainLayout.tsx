@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import GlassCard from "../components/GlassCard";
+import SideBar from "../components/SideBar";
 
 /**
  * @description 主题上下文类型
@@ -37,16 +37,7 @@ const MainLayout = ({ children, themeContext }: MainLayoutProps) => {
 
   return (
     <div>
-      <GlassCard hover={false}>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/posts">Posts</Link>
-          </li>
-        </ul>
-      </GlassCard>
+      <SideBar />
       {children}
     </div>
   );
