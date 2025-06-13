@@ -1,0 +1,30 @@
+{
+  "common": {
+    "profile": "Profile",
+    "moments": "Moments",
+    "loadMore": "Load More",
+    "running": "Website is running",
+    "days": "Days",
+    "visitors": "Visitors",
+    "author": "Azimat"
+  },
+  "profile": {
+    "title": "Profile",
+    "workExperience": "Work Experience",
+    "education": "Education",
+    "rank": "Rank",
+    "majorCourses": "Major Courses",
+    "campusExperience": "Campus Experience",
+    "classExperience": "Class Experience",
+    "awardExperience": "Award Experience",
+    "skills": "Skills",
+    "thesis": "Thesis",
+    "project": "Project",
+    "viewDemo": "View Demo",
+    "viewCode": "View Code"
+  },
+  "moments": {
+    "title": "Moments",
+    "post": "Post"
+  }
+}

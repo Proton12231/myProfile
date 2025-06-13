@@ -4,11 +4,11 @@ export const Language = [
     name: "简体中文",
   },
   {
-    code: "zh-TW",
+    code: "zh-HK",
     name: "繁體中文",
   },
   {
-    code: "en-US",
+    code: "en",
     name: "English",
   },
   {

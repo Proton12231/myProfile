@@ -1,0 +1,30 @@
+{
+  "common": {
+    "profile": "個人資料",
+    "moments": "動態",
+    "loadMore": "加載更多",
+    "running": "網站已運行",
+    "days": "天",
+    "visitors": "訪客數",
+    "author": "艾孜買提"
+  },
+  "profile": {
+    "title": "個人資料",
+    "workExperience": "工作經歷",
+    "education": "教育經歷",
+    "rank": "排名",
+    "majorCourses": "主修課程",
+    "campusExperience": "校園經歷",
+    "classExperience": "班幹部/社團經歷",
+    "awardExperience": "獲獎經歷",
+    "skills": "技術棧",
+    "thesis": "畢業論文",
+    "project": "項目經歷",
+    "viewDemo": "查看演示",
+    "viewCode": "查看代碼"
+  },
+  "moments": {
+    "title": "動態",
+    "post": "發布動態"
+  }
+}

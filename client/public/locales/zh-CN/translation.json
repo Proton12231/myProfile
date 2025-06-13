@@ -1,0 +1,30 @@
+{
+  "common": {
+    "profile": "个人资料",
+    "moments": "动态",
+    "loadMore": "加载更多",
+    "running": "网站已运行",
+    "days": "天",
+    "visitors": "访客数",
+    "author": "艾孜买提"
+  },
+  "profile": {
+    "title": "个人资料",
+    "workExperience": "工作经历",
+    "education": "教育经历",
+    "rank": "排名",
+    "majorCourses": "主修课程",
+    "campusExperience": "校园经历",
+    "classExperience": "班干部/社团经历",
+    "awardExperience": "获奖经历",
+    "skills": "技术栈",
+    "thesis": "毕业论文",
+    "project": "项目经历",
+    "viewDemo": "查看演示",
+    "viewCode": "查看代码"
+  },
+  "moments": {
+    "title": "动态",
+    "post": "发布动态"
+  }
+}

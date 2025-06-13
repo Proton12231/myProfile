@@ -37,6 +37,23 @@ function App() {
   }, []);
 
   /**
+   * @description 监听标签页是否激活
+   */
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        document.title = "艾孜买提";
+      } else {
+        document.title = "欢迎再来👏";
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
+  /**
    * @description 主题上下文, 用于传递给子组件
    */
   const themeContext: ThemeContextType = {

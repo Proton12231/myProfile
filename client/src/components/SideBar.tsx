@@ -10,6 +10,7 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 /* 侧边栏容器 */
 const SideBarContainer = styled.nav`
@@ -225,6 +226,7 @@ const Copyright = styled.div`
 
 /** @description PC端侧边栏组件 */
 const SideBar = () => {
+  const { t } = useTranslation();
   // 计算网站运行天数
   const [runningDays, setRunningDays] = useState(0);
   const [visitorCount, setVisitorCount] = useState(0);
@@ -275,13 +277,13 @@ const SideBar = () => {
             <NavLinkIcon>
               <FontAwesomeIcon icon={faUser} />
             </NavLinkIcon>
-            个人资料
+            {t("common.profile")}
           </StyledNavLink>
           <StyledNavLink to="/posts">
             <NavLinkIcon>
               <FontAwesomeIcon icon={faCamera} />
             </NavLinkIcon>
-            个人动态
+            {t("common.moments")}
           </StyledNavLink>
         </NavLinks>
 
@@ -290,13 +292,13 @@ const SideBar = () => {
           <InfoCards>
             <InfoCard>
               <InfoTitle>
-                <FontAwesomeIcon icon={faCalendarAlt} /> 运行天数
+                <FontAwesomeIcon icon={faCalendarAlt} /> {t("common.running")}
               </InfoTitle>
               <InfoValue>{runningDays}</InfoValue>
             </InfoCard>
             <InfoCard>
               <InfoTitle>
-                <FontAwesomeIcon icon={faEye} /> 访客数
+                <FontAwesomeIcon icon={faEye} /> {t("common.visitors")}
               </InfoTitle>
               <InfoValue>{visitorCount}</InfoValue>
             </InfoCard>
@@ -305,7 +307,7 @@ const SideBar = () => {
             © 2025-{new Date().getFullYear()} <br />
             Made with{" "}
             <FontAwesomeIcon icon={faHeart} style={{ color: "#f43f5e" }} /> by
-            艾孜买提
+            {t("common.author")}
           </Copyright>
         </SiteInfo>
       </SideBarContainer>
