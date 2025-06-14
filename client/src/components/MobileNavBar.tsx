@@ -12,6 +12,7 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import { Language } from "../utils/Enums";
+import { useLanguage } from "../context/LanguageContext";
 
 /**
  * @description 主题上下文类型
@@ -19,14 +20,6 @@ import { Language } from "../utils/Enums";
 interface ThemeContextProps {
   theme: string;
   toggleTheme: () => void;
-}
-
-/**
- * @description 语言上下文类型
- */
-interface LanguageContextProps {
-  language: string;
-  changeLanguage: (lang: string) => void;
 }
 
 /**
@@ -176,7 +169,9 @@ interface BackToTopButtonProps {
 /**
  * @description 移动端导航栏返回顶部按钮
  */
-const BackToTopButton = styled.button<BackToTopButtonProps>`
+const BackToTopButton = styled.button.withConfig({
+  shouldForwardProp: (prop) => prop !== "show",
+})<BackToTopButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -247,7 +242,9 @@ const ChangeLanguageButton = styled.button`
 /**
  * @description 语言选择气泡框
  */
-const LanguagePopup = styled.div<{ show: boolean }>`
+const LanguagePopup = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== "show",
+})<{ show: boolean }>`
   position: absolute;
   bottom: 60px;
   right: -12px;
@@ -282,7 +279,9 @@ const LanguagePopup = styled.div<{ show: boolean }>`
 /**
  * @description 语言选项
  */
-const LanguageOption = styled.div<{ active: boolean }>`
+const LanguageOption = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== "active",
+})<{ active: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -312,13 +311,11 @@ const LanguageOption = styled.div<{ active: boolean }>`
  */
 const MobileNavBar = ({
   themeContext,
-  languageContext = { language: "zh-CN", changeLanguage: () => {} },
 }: {
   themeContext: ThemeContextProps;
-  languageContext?: LanguageContextProps;
 }) => {
   const { theme, toggleTheme } = themeContext; // 主题上下文
-  const { language, changeLanguage } = languageContext; // 语言上下文
+  const { currentLanguage, setLanguage } = useLanguage(); // 语言上下文
   const [showBackToTop, setShowBackToTop] = useState(false); // 是否显示返回顶部按钮
   const [showLanguagePopup, setShowLanguagePopup] = useState(false); // 是否显示语言选择气泡框
   const languagePopupRef = useRef<HTMLDivElement>(null); // 语言选择气泡框引用
@@ -383,14 +380,14 @@ const MobileNavBar = ({
             {Language?.map((lang) => (
               <LanguageOption
                 key={lang.code}
-                active={language === lang.code}
+                active={currentLanguage === lang.code}
                 onClick={() => {
-                  changeLanguage(lang.code);
+                  setLanguage(lang.code);
                   setShowLanguagePopup(false);
                 }}
               >
                 {lang.name}
-                {language === lang.code && (
+                {currentLanguage === lang.code && (
                   <FontAwesomeIcon icon={faCheck} size="sm" />
                 )}
               </LanguageOption>

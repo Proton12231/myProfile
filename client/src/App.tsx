@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Posts from "./pages/posts";
 import MainLayout from "./layout/MainLayout";
+import { initI18n } from "./i18n/i18n.ts";
+import { LanguageProvider } from "./context/LanguageContext";
+
+initI18n();
 
 /**
  * @description 主题上下文类型
@@ -29,11 +33,15 @@ function App() {
   /**
    * @description 初始化主题
    */
-  useEffect(() => {
+  const initTheme = () => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       setTheme(savedTheme as "light" | "dark");
     }
+  };
+
+  useEffect(() => {
+    initTheme();
   }, []);
 
   /**
@@ -64,14 +72,16 @@ function App() {
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyle />
-      <BrowserRouter>
-        <MainLayout themeContext={themeContext}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/posts" element={<Posts />} />
-          </Routes>
-        </MainLayout>
-      </BrowserRouter>
+      <LanguageProvider>
+        <BrowserRouter>
+          <MainLayout themeContext={themeContext}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/posts" element={<Posts />} />
+            </Routes>
+          </MainLayout>
+        </BrowserRouter>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }
