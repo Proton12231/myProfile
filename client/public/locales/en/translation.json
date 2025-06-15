@@ -1,7 +1,5 @@
 {
   "common": {
-    "profile": "Profile",
-    "moments": "Moments",
     "loadMore": "Load More",
     "running": "Website is running",
     "days": "Days",
@@ -26,5 +24,9 @@
   "moments": {
     "title": "Moments",
     "post": "Post"
+  },
+  "titles": {
+    "home": "Profile",
+    "posts": "Moments"
   }
 }

@@ -225,7 +225,7 @@ const Copyright = styled.div`
 `;
 
 /** @description PC端侧边栏组件 */
-const SideBar = () => {
+const SideBar = ({ setTitle }: { setTitle: (title: string) => void }) => {
   const { t } = useTranslation();
   // 计算网站运行天数
   const [runningDays, setRunningDays] = useState(0);
@@ -273,17 +273,17 @@ const SideBar = () => {
 
         {/* 导航菜单 */}
         <NavLinks>
-          <StyledNavLink to="/" end>
+          <StyledNavLink to="/" end onClick={() => setTitle("home")}>
             <NavLinkIcon>
               <FontAwesomeIcon icon={faUser} />
             </NavLinkIcon>
-            {t("common.profile")}
+            {t("titles.home")}
           </StyledNavLink>
-          <StyledNavLink to="/posts">
+          <StyledNavLink to="/posts" onClick={() => setTitle("posts")}>
             <NavLinkIcon>
               <FontAwesomeIcon icon={faCamera} />
             </NavLinkIcon>
-            {t("common.moments")}
+            {t("titles.posts")}
           </StyledNavLink>
         </NavLinks>
 
@@ -306,8 +306,10 @@ const SideBar = () => {
           <Copyright>
             © 2025-{new Date().getFullYear()} <br />
             Made with{" "}
-            <FontAwesomeIcon icon={faHeart} style={{ color: "#f43f5e" }} /> by
-            {t("common.author")}
+            <FontAwesomeIcon
+              icon={faHeart}
+              style={{ color: "#f43f5e" }}
+            /> by {t("common.author")}
           </Copyright>
         </SiteInfo>
       </SideBarContainer>

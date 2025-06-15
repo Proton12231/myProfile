@@ -10,7 +10,7 @@ const LanguageContext = createContext<{
   setLanguage: (language: string) => void;
 }>({
   currentLanguage: "zh-CN",
-  setLanguage: (receivedLanguage: string) => {},
+  setLanguage: () => {},
 });
 
 /**
@@ -39,11 +39,24 @@ export const LanguageProvider = ({
   const setLanguage = (receivedLanguage: string) => {
     i18n.changeLanguage(receivedLanguage);
     setCurrentLanguage(receivedLanguage);
-    // 设置文档方向
-    if (receivedLanguage === "ug-CN") {
-      document.dir = "rtl";
+
+    // 设置文档方向并保存到localStorage
+    const direction = receivedLanguage === "ug-CN" ? "rtl" : "ltr";
+    document.dir = direction;
+    localStorage.setItem("documentDirection", direction);
+  };
+
+  /**
+   * @description 读取文档方向
+   */
+  const saveDocumentDirection = () => {
+    // 恢复保存的文档方向
+    const savedDirection = localStorage.getItem("documentDirection");
+    if (savedDirection) {
+      document.dir = savedDirection;
     } else {
-      document.dir = "ltr";
+      // 如果没有保存的方向，根据当前语言设置方向
+      document.dir = currentLanguage === "ug-CN" ? "rtl" : "ltr";
     }
   };
 
@@ -63,9 +76,10 @@ export const LanguageProvider = ({
   };
 
   /**
-   * @description 初始化时读取localStorage语言
+   * @description 初始化时读取localStorage语言和方向设置
    */
   useEffect(() => {
+    saveDocumentDirection();
     detectLanguage();
   }, []);
 

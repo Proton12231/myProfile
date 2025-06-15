@@ -1,7 +1,5 @@
 {
   "common": {
-    "profile": "個人資料",
-    "moments": "動態",
     "loadMore": "加載更多",
     "running": "網站已運行",
     "days": "天",
@@ -26,5 +24,9 @@
   "moments": {
     "title": "動態",
     "post": "發布動態"
+  },
+  "titles": {
+    "home": "個人資料",
+    "posts": "動態"
   }
 }

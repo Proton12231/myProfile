@@ -1,7 +1,5 @@
 {
   "common": {
-    "profile": "个人资料",
-    "moments": "动态",
     "loadMore": "加载更多",
     "running": "网站已运行",
     "days": "天",
@@ -26,5 +24,9 @@
   "moments": {
     "title": "动态",
     "post": "发布动态"
+  },
+  "titles": {
+    "home": "个人资料",
+    "posts": "动态"
   }
 }
