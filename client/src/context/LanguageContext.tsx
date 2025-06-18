@@ -7,9 +7,11 @@ import { Language } from "../utils/Enums";
  */
 const LanguageContext = createContext<{
   currentLanguage: string;
+  currentDirection: string;
   setLanguage: (language: string) => void;
 }>({
   currentLanguage: "zh-CN",
+  currentDirection: "ltr",
   setLanguage: () => {},
 });
 
@@ -32,6 +34,7 @@ export const LanguageProvider = ({
 }) => {
   const { i18n } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+  const [currentDirection, setCurrentDirection] = useState("ltr");
 
   /**
    * @description 封装语言切换函数
@@ -44,6 +47,7 @@ export const LanguageProvider = ({
     const direction = receivedLanguage === "ug-CN" ? "rtl" : "ltr";
     document.dir = direction;
     localStorage.setItem("documentDirection", direction);
+    setCurrentDirection(direction);
   };
 
   /**
@@ -84,7 +88,9 @@ export const LanguageProvider = ({
   }, []);
 
   return (
-    <LanguageContext.Provider value={{ currentLanguage, setLanguage }}>
+    <LanguageContext.Provider
+      value={{ currentLanguage, currentDirection, setLanguage }}
+    >
       {children}
     </LanguageContext.Provider>
   );

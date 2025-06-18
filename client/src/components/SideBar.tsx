@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import Avatar from "./Avatar";
 
 /* 侧边栏容器 */
 const SideBarContainer = styled.nav`
@@ -58,38 +59,6 @@ const ProfileBrief = styled.div`
   }
 `;
 
-/* 头像 */
-const Avatar = styled.div`
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: ${(props) => props.theme.spacingMd};
-  border: 3px solid ${(props) => props.theme.primaryColor};
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    padding: 3px;
-    background: ${(props) =>
-      `linear-gradient(45deg, ${props.theme.primaryColor}, ${props.theme.secondaryColor}, ${props.theme.accentColor})`};
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-`;
-
-const AvatarImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-`;
-
 /* 姓名 */
 const Name = styled.h2`
   margin: ${(props) => props.theme.spacingSm} 0;
@@ -123,6 +92,7 @@ const StyledNavLink = styled(NavLink)`
   color: ${(props) => props.theme.textColor};
   font-weight: 500;
   transition: ${(props) => props.theme.transition};
+  gap: ${(props) => props.theme.spacingMd};
 
   &:hover {
     background: ${(props) => props.theme.primaryLight};
@@ -138,7 +108,6 @@ const StyledNavLink = styled(NavLink)`
 
 /* 导航链接图标 */
 const NavLinkIcon = styled.i`
-  margin-right: ${(props) => props.theme.spacingMd};
   font-size: 1.1rem;
   width: 24px;
   text-align: center;
@@ -193,9 +162,9 @@ const InfoTitle = styled.div`
   margin-bottom: 4px;
   display: flex;
   align-items: center;
+  gap: ${(props) => props.theme.spacingXs};
 
   svg {
-    margin-right: 4px;
     color: ${(props) => props.theme.primaryColor};
   }
 `;
@@ -261,12 +230,7 @@ const SideBar = ({ setTitle }: { setTitle: (title: string) => void }) => {
       <SideBarContainer>
         {/* 个人简介 */}
         <ProfileBrief>
-          <Avatar>
-            <AvatarImage
-              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
-              alt="avatar"
-            />
-          </Avatar>
+          <Avatar src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80" />
           <Name>陈明阳</Name>
           <Title>前端开发工程师</Title>
         </ProfileBrief>
@@ -306,10 +270,8 @@ const SideBar = ({ setTitle }: { setTitle: (title: string) => void }) => {
           <Copyright>
             © 2025-{new Date().getFullYear()} <br />
             Made with{" "}
-            <FontAwesomeIcon
-              icon={faHeart}
-              style={{ color: "#f43f5e" }}
-            /> by {t("common.author")}
+            <FontAwesomeIcon icon={faHeart} style={{ color: "#f43f5e" }} />
+            {"  "} by {t("common.author")}
           </Copyright>
         </SiteInfo>
       </SideBarContainer>

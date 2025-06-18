@@ -1,7 +1,11 @@
 import React from "react";
-
+import CommonInfo from "./components/CommonInfo";
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <CommonInfo />
+    </>
+  );
 };
 
 export default Home;
